@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutzerklärung</title>
+  <style>
+    /* Schriftarten: passe die Dateinamen/Schriftfamilien an */
+    @font-face {
+      font-family: 'HeadingFont';
+      src: url('heading-font.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'BodyFont';
+      src: url('body-font.woff2') format('woff2');
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      background: linear-gradient(to bottom, rgb(128,87,168), rgb(80,50,130));
+      font-family: 'BodyFont', Arial, sans-serif;
+      overscroll-behavior: contain;
+    }
+
+    body {
+      display: flex;
+    }
+
+    /* Sidebar */
+    #sidebar {
+      width: 80px;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    #sidebar button {
+      margin: 10px 0;
+      padding: 10px;
+      width: 50px;
+      cursor: pointer;
+      border: none;
+      background-color: #333;
+      color: white;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    #sidebar button:hover {
+      background-color: #555;
+      transform: scale(1.1);
+    }
+
+    #sidebar button.active {
+      background-color: #777;
+    }
+
+    /* Content */
+    #content {
+      margin-left: 80px;
+      padding: 20px;
+      color: white;
+      width: 100%;
+      box-sizing: border-box;
+      min-height: 200vh; /* genug, um scrollen zu können */
+      background: linear-gradient(to bottom, rgb(128,87,168), rgb(80,50,130));
+    }
+
+    h1 {
+      margin-top: 0;
+      padding: 10px;
+      background-color: black;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      font-family: 'HeadingFont', Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="sidebar">
+    <button id="btn-DE" onclick="setLanguage('DE')">DE</button>
+    <button id="btn-EN" onclick="setLanguage('EN')">EN</button>
+    <button id="btn-FR" onclick="setLanguage('FR')">FR</button>
+    <button id="btn-ES" onclick="setLanguage('ES')">ES</button>
+    <button id="btn-IT" onclick="setLanguage('IT')">IT</button>
+  </div>
+
+  <div id="content">
+    <h1>Privacy Policy</h1>
+    <p id="text"></p>
+  </div>
+
+  <script>
+    const translations = {
+      DE: `
+        Allgemeine Geschäftsbedingungen (AGB)
+        \n
+        \n1. Geltungsbereich
+        \nDiese AGB regeln die Nutzung der App. 
+        \nMit der Nutzung stimmt die Nutzerin/der Nutzer diesen Bedingungen zu.
+        \n
+        \n2. Nutzung der App
+        \nDie App wird kostenfrei bereitgestellt und enthält Werbung. 
+        \nEine Nutzung ist nur bei Zustimmung zu den AGB möglich.
+        \nDie App darf nur im Rahmen der gesetzlichen Vorschriften und dieser AGB genutzt werden.
+        \nEs ist untersagt, technische Schutzmaßnahmen zu umgehen oder die App zu manipulieren.
+        \nInhalte der App dürfen nicht ohne unsere Zustimmung kopiert oder verbreitet werden.
+        \n
+        \n3. Werbung
+        \nEs werden Werbeanzeigen eingeblendet, die von Dritten stammen. 
+        \nFür deren Inhalt übernehmen wir keine Haftung.
+        \nBei Klick auf eine Anzeige können Nutzer auf externe Websites oder Apps weitergeleitet werden, 
+        \nderen Inhalte außerhalb unseres Einflussbereichs liegen.
+        \nDie angezeigte Werbung kann auf Grundlage anonymer oder pseudonymer Nutzungsdaten personalisiert werden, 
+        \nsofern der Nutzer zuvor eingewilligt hat.
+        \n
+        \n4. Haftung
+        \nWir haften nur bei Vorsatz oder grober Fahrlässigkeit. Für Schäden durch Werbung oder externe Inhalte übernehmen wir keine Verantwortung.
+        \n
+        \n5. Datenschutzrichtlinie (Privacy Policy)
+        \nDaten werden gemäß unserer Datenschutzerklärung verarbeitet.
+        \na) Erhobene Daten
+        \nGeräteinformationen (z. B. Modell, Betriebssystemversion, eindeutige Gerätekennungen)
+        \nIP-Adresse und allgemeine Standortinformationen
+        \nNutzungsverhalten in der App (z. B. aufgerufene Seiten, Anzeigeninteraktionen)
+        \n
+        \nb). Zweck der Datenverarbeitung
+        \nAnzeige von Werbung und Messung ihrer Leistung
+        \nVerbesserung des Nutzererlebnisses
+        \nFehleranalyse und Sicherheit der App
+        \n
+        \nc) Drittanbieter & Werbung
+        \nWir nutzen folgende Werbedienstleister, die im Auftrag Daten verarbeiten können:
+        \n
+        \nGoogle AdMob (Google Ireland Limited)
+        \nDatenschutzerklärung: https://policies.google.com/privacy
+        \n
+        \nDieser Anbieter kann Cookies oder ähnliche Technologien einsetzen, um personalisierte Werbung anzuzeigen.
+        \nIn der EU holen wir vorab die Einwilligung des Nutzers über einen Consent-Dialog ein.
+        \n
+        \nd) Rechtsgrundlage
+        \nEinwilligung (Art. 6 Abs. 1 lit. a DSGVO) für personalisierte Werbung
+        \nBerechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO) für nicht-personalisierte Werbung und App-Sicherheit
+        \n
+        \n6. Widerruf und Opt-out
+        \nNutzer können ihre Einwilligung jederzeit in den App-Einstellungen widerrufen.
+        \nMit dem Widerruf wird der Nutzerin/dem Nutzer der weitere Zugriff zur App verwehrt.
+        \nNicht-personalisierte Werbung kann weiterhin angezeigt werden.
+        \n
+        \n7. Speicherdauer
+        \nDaten werden nur so lange gespeichert, wie es für die Erfüllung der genannten Zwecke erforderlich ist.
+        \n
+        \n8. Rechte der Nutzer
+        \nDie Nutzerin/der Nutzer hat das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit.
+        \nAnfragen bitte an die folgende Email richten: [MAIL]
+        \n
+        \n9. Änderungen
+        \nWir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie an geänderte Rechtslagen oder technische Änderungen in der App anzupassen.
+        \nWir können die App und AGB jederzeit ändern. 
+        \nÄnderungen werden entsprechend bekannt gegeben.
+        \n
+        \n10. Anwendbares Recht
+        \nEs gilt deutsches Recht, soweit zwingende Verbraucherrechte des Nutzers nicht entgegenstehen.
+        \n
+        \n11. Zustimmung
+        \nMit der Zustimmung zu den AGB erklärt die Nutzerin/der Nutzer, diese gelesen und akzeptiert zu haben. 
+        \nOhne Zustimmung ist eine Nutzung nicht möglich.
+        `,
+      EN: `
+        General Terms and Conditions (GTC)
+        \n
+        \n1. Scope
+        \nThese GTC govern the use of the app. 
+        \nBy using the app, the user agrees to these terms.
+        \n
+        \n2. Use of the app
+        \nThe app is provided free of charge and contains advertising. 
+        \nUse is only permitted if the user accepts these GTC.
+        \nThe app may only be used in compliance with legal requirements and these GTC.
+        \nIt is prohibited to circumvent technical protection measures or manipulate the app.
+        \nContent of the app may not be copied or distributed without our consent.
+        \n
+        \n3. Advertising
+        \nAdvertisements from third parties are displayed. 
+        \nWe accept no liability for their content.
+        \nBy clicking on an ad, users may be redirected to external websites or apps, 
+        \nthe content of which is beyond our control.
+        \nThe displayed advertising may be personalized on the basis of anonymous or pseudonymous usage data, 
+        \nprovided the user has given prior consent.
+        \n
+        \n4. Liability
+        \nWe are only liable for intent or gross negligence. We accept no responsibility for damage caused by advertising or external content.
+        \n
+        \n5. Privacy Policy
+        \nData is processed in accordance with our privacy policy.
+        \na) Data collected
+        \nDevice information (e.g. model, operating system version, unique device identifiers)
+        \nIP address and general location information
+        \nUsage behavior in the app (e.g. pages viewed, ad interactions)
+        \n
+        \nb) Purpose of data processing
+        \nDisplay of advertising and measurement of its performance
+        \nImprovement of user experience
+        \nError analysis and app security
+        \n
+        \nc) Third parties & advertising
+        \nWe use the following advertising providers who may process data on our behalf:
+        \n
+        \nGoogle AdMob (Google Ireland Limited)
+        \nPrivacy policy: https://policies.google.com/privacy
+        \n
+        \nThis provider may use cookies or similar technologies to display personalized advertising.
+        \nIn the EU, we obtain user consent in advance via a consent dialog.
+        \n
+        \nd) Legal basis
+        \nConsent (Art. 6 (1) lit. a GDPR) for personalized advertising
+        \nLegitimate interest (Art. 6 (1) lit. f GDPR) for non-personalized advertising and app security
+        \n
+        \n6. Withdrawal and opt-out
+        \nUsers may withdraw their consent at any time in the app settings.
+        \nUpon withdrawal, the user will no longer be granted access to the app.
+        \nNon-personalized advertising may still be displayed.
+        \n
+        \n7. Storage period
+        \nData will only be stored for as long as necessary to fulfill the stated purposes.
+        \n
+        \n8. User rights
+        \nUsers have the right to access, rectification, erasure, restriction of processing and data portability.
+        \nRequests should be sent to the following email: [MAIL]
+        \n
+        \n9. Changes
+        \nWe reserve the right to adapt this privacy policy to changed legal requirements or technical changes in the app.
+        \nWe may change the app and GTC at any time. 
+        \nChanges will be announced accordingly.
+        \n
+        \n10. Applicable law
+        \nGerman law applies, unless mandatory consumer rights of the user contradict this.
+        \n
+        \n11. Consent
+        \nBy agreeing to the GTC, the user declares that they have read and accepted them. 
+        \nUse is not possible without consent.
+        `,
+      FR: `
+        Conditions générales d'utilisation (CGU)
+        \n
+        \n1. Champ d'application
+        \nLes présentes CGU régissent l'utilisation de l'application. 
+        \nEn utilisant l'application, l'utilisateur accepte ces conditions.
+        \n
+        \n2. Utilisation de l'application
+        \nL'application est fournie gratuitement et contient de la publicité. 
+        \nL'utilisation n'est possible qu'en acceptant les CGU.
+        \nL'application ne peut être utilisée que conformément à la loi et aux présentes CGU.
+        \nIl est interdit de contourner les mesures de protection techniques ou de manipuler l'application.
+        \nLe contenu de l'application ne peut pas être copié ou distribué sans notre accord.
+        \n
+        \n3. Publicité
+        \nDes annonces de tiers sont affichées. 
+        \nNous n'assumons aucune responsabilité pour leur contenu.
+        \nEn cliquant sur une annonce, l'utilisateur peut être redirigé vers des sites web ou applications externes, 
+        \ndont le contenu échappe à notre contrôle.
+        \nLa publicité affichée peut être personnalisée sur la base de données d'utilisation anonymes ou pseudonymes, 
+        \nsi l'utilisateur y a préalablement consenti.
+        \n
+        \n4. Responsabilité
+        \nNous ne sommes responsables qu'en cas de faute intentionnelle ou de négligence grave. Nous déclinons toute responsabilité pour les dommages causés par la publicité ou les contenus externes.
+        \n
+        \n5. Politique de confidentialité
+        \nLes données sont traitées conformément à notre politique de confidentialité.
+        \na) Données collectées
+        \nInformations sur l'appareil (modèle, version du système, identifiants uniques)
+        \nAdresse IP et informations générales de localisation
+        \nComportement d'utilisation dans l'application (pages consultées, interactions publicitaires)
+        \n
+        \nb) Finalité du traitement
+        \nAffichage de publicité et mesure de ses performances
+        \nAmélioration de l'expérience utilisateur
+        \nAnalyse des erreurs et sécurité de l'application
+        \n
+        \nc) Tiers et publicité
+        \nNous utilisons les prestataires suivants, qui peuvent traiter des données pour notre compte:
+        \n
+        \nGoogle AdMob (Google Ireland Limited)
+        \nPolitique de confidentialité: https://policies.google.com/privacy
+        \n
+        \nCe prestataire peut utiliser des cookies ou des technologies similaires pour afficher des publicités personnalisées.
+        \nDans l'UE, nous recueillons le consentement de l'utilisateur via une boîte de dialogue.
+        \n
+        \nd) Base légale
+        \nConsentement (art. 6 al. 1 a RGPD) pour la publicité personnalisée
+        \nIntérêt légitime (art. 6 al. 1 f RGPD) pour la publicité non personnalisée et la sécurité de l'application
+        \n
+        \n6. Retrait et opt-out
+        \nL'utilisateur peut retirer son consentement à tout moment dans les paramètres de l'application.
+        \nEn cas de retrait, l'utilisateur n'aura plus accès à l'application.
+        \nLa publicité non personnalisée peut toujours être affichée.
+        \n
+        \n7. Durée de conservation
+        \nLes données ne sont conservées que le temps nécessaire pour atteindre les objectifs mentionnés.
+        \n
+        \n8. Droits des utilisateurs
+        \nL'utilisateur a le droit d'accès, de rectification, d'effacement, de limitation du traitement et de portabilité des données.
+        \nLes demandes doivent être envoyées à l'adresse e-mail suivante : [MAIL]
+        \n
+        \n9. Modifications
+        \nNous nous réservons le droit d'adapter cette politique de confidentialité en fonction des évolutions légales ou techniques de l'application.
+        \nNous pouvons modifier l'application et les CGU à tout moment. 
+        \nLes modifications seront communiquées en conséquence.
+        \n
+        \n10. Droit applicable
+        \nLe droit allemand s'applique, sauf dispositions légales obligatoires du pays de l'utilisateur.
+        \n
+        \n11. Consentement
+        \nEn acceptant les CGU, l'utilisateur déclare les avoir lues et acceptées. 
+        \nL'utilisation n'est pas possible sans consentement.
+        `,
+      ES: `Términos y condiciones generales (TCG)
+        \n
+        \n1. Ámbito de aplicación
+        \nEstos TCG regulan el uso de la aplicación. 
+        \nAl usar la aplicación, el usuario acepta estas condiciones.
+        \n
+        \n2. Uso de la aplicación
+        \nLa aplicación se proporciona de forma gratuita e incluye publicidad. 
+        \nSu uso solo es posible aceptando los TCG.
+        \nLa aplicación solo puede utilizarse de acuerdo con la ley y estos TCG.
+        \nEstá prohibido eludir medidas de protección técnicas o manipular la aplicación.
+        \nEl contenido de la aplicación no puede copiarse ni distribuirse sin nuestro consentimiento.
+        \n
+        \n3. Publicidad
+        \nSe muestran anuncios de terceros. 
+        \nNo asumimos responsabilidad por su contenido.
+        \nAl hacer clic en un anuncio, el usuario puede ser redirigido a sitios web o aplicaciones externos, 
+        \nde cuyo contenido no tenemos control.
+        \nLa publicidad mostrada puede personalizarse en función de datos de uso anónimos o seudónimos, 
+        \na condición de que el usuario haya dado su consentimiento previo.
+        \n
+        \n4. Responsabilidad
+        \nSolo somos responsables en casos de dolo o negligencia grave. No nos hacemos responsables de daños causados por publicidad o contenido externo.
+        \n
+        \n5. Política de privacidad
+        \nLos datos se procesan de acuerdo con nuestra política de privacidad.
+        \na) Datos recogidos
+        \nInformación del dispositivo (modelo, versión del sistema, identificadores únicos)
+        \nDirección IP e información general de localización
+        \nComportamiento de uso en la aplicación (páginas vistas, interacciones con anuncios)
+        \n
+        \nb) Finalidad del tratamiento
+        \nMostrar publicidad y medir su rendimiento
+        \nMejorar la experiencia del usuario
+        \nAnálisis de errores y seguridad de la aplicación
+        \n
+        \nc) Terceros y publicidad
+        \nUtilizamos los siguientes proveedores de publicidad, que pueden procesar datos en nuestro nombre:
+        \n
+        \nGoogle AdMob (Google Ireland Limited)
+        \nPolítica de privacidad: https://policies.google.com/privacy
+        \n
+        \nEste proveedor puede utilizar cookies u otras tecnologías similares para mostrar publicidad personalizada.
+        \nEn la UE, solicitamos el consentimiento del usuario previamente mediante un cuadro de diálogo.
+        \n
+        \nd) Base jurídica
+        \nConsentimiento (Art. 6 párr. 1 lit. a RGPD) para publicidad personalizada
+        \nInterés legítimo (Art. 6 párr. 1 lit. f RGPD) para publicidad no personalizada y seguridad de la aplicación
+        \n
+        \n6. Retirada y opt-out
+        \nEl usuario puede retirar su consentimiento en cualquier momento en los ajustes de la aplicación.
+        \nTras la retirada, el usuario no tendrá más acceso a la aplicación.
+        \nLa publicidad no personalizada puede seguir mostrándose.
+        \n
+        \n7. Periodo de conservación
+        \nLos datos se conservarán únicamente mientras sea necesario para cumplir con los fines mencionados.
+        \n
+        \n8. Derechos del usuario
+        \nEl usuario tiene derecho de acceso, rectificación, supresión, limitación del tratamiento y portabilidad de los datos.
+        \nLas solicitudes deben enviarse al siguiente correo electrónico: [MAIL]
+        \n
+        \n9. Cambios
+        \nNos reservamos el derecho de adaptar esta política de privacidad a los cambios legales o técnicos de la aplicación.
+        \nPodemos cambiar la aplicación y los TCG en cualquier momento. 
+        \nLos cambios se anunciarán en consecuencia.
+        \n
+        \n10. Ley aplicable
+        \nSe aplica la legislación alemana, salvo derechos obligatorios de los consumidores del país del usuario.
+        \n
+        \n11. Consentimiento
+        \nAl aceptar los TCG, el usuario declara haberlos leído y aceptado. 
+        \nEl uso no es posible sin consentimiento.
+        `,
+      IT: `Condizioni generali di utilizzo (CGU)
+        \n
+        \n1. Ambito di applicazione
+        \nLe presenti CGU regolano l'utilizzo dell'app. 
+        \nUtilizzando l'app, l'utente accetta queste condizioni.
+        \n
+        \n2. Uso dell'app
+        \nL'app è fornita gratuitamente e contiene pubblicità. 
+        \nL'uso è consentito solo accettando le CGU.
+        \nL'app può essere utilizzata solo nel rispetto della legge e delle presenti CGU.
+        \nÈ vietato eludere misure di protezione tecniche o manipolare l'app.
+        \nI contenuti dell'app non possono essere copiati o distribuiti senza il nostro consenso.
+        \n
+        \n3. Pubblicità
+        \nVengono mostrati annunci di terzi. 
+        \nNon ci assumiamo alcuna responsabilità per i loro contenuti.
+        \nCliccando su un annuncio, l'utente può essere reindirizzato a siti web o app esterni, 
+        \ndi cui non abbiamo alcun controllo.
+        \nLa pubblicità mostrata può essere personalizzata sulla base di dati di utilizzo anonimi o pseudonimi, 
+        \nse l'utente ha precedentemente dato il proprio consenso.
+        \n
+        \n4. Responsabilità
+        \nSiamo responsabili solo in caso di dolo o colpa grave. Non ci assumiamo responsabilità per danni causati da pubblicità o contenuti esterni.
+        \n
+        \n5. Informativa sulla privacy
+        \nI dati vengono trattati in conformità alla nostra informativa sulla privacy.
+        \na) Dati raccolti
+        \nInformazioni sul dispositivo (modello, versione del sistema operativo, identificatori univoci)
+        \nIndirizzo IP e informazioni generali sulla posizione
+        \nComportamento di utilizzo nell'app (pagine visitate, interazioni pubblicitarie)
+        \n
+        \nb) Finalità del trattamento
+        \nVisualizzazione della pubblicità e misurazione delle sue prestazioni
+        \nMiglioramento dell'esperienza utente
+        \nAnalisi degli errori e sicurezza dell'app
+        \n
+        \nc) Terze parti e pubblicità
+        \nUtilizziamo i seguenti fornitori di pubblicità, che possono trattare dati per nostro conto:
+        \n
+        \nGoogle AdMob (Google Ireland Limited)
+        \nInformativa sulla privacy: https://policies.google.com/privacy
+        \n
+        \nQuesto fornitore può utilizzare cookie o tecnologie simili per mostrare pubblicità personalizzata.
+        \nNell'UE, raccogliamo preventivamente il consenso dell'utente tramite una finestra di dialogo.
+        \n
+        \nd) Base giuridica
+        \nConsenso (art. 6, par. 1, lett. a GDPR) per la pubblicità personalizzata
+        \nInteresse legittimo (art. 6, par. 1, lett. f GDPR) per la pubblicità non personalizzata e la sicurezza dell'app
+        \n
+        \n6. Revoca e opt-out
+        \nL'utente può revocare il proprio consenso in qualsiasi momento nelle impostazioni dell'app.
+        \nDopo la revoca, l'utente non avrà più accesso all'app.
+        \nLa pubblicità non personalizzata può comunque essere visualizzata.
+        \n
+        \n7. Periodo di conservazione
+        \nI dati vengono conservati solo per il tempo necessario a raggiungere le finalità indicate.
+        \n
+        \n8. Diritti dell'utente
+        \nL'utente ha diritto di accesso, rettifica, cancellazione, limitazione del trattamento e portabilità dei dati.
+        \nLe richieste devono essere inviate al seguente indirizzo email: [MAIL]
+        \n
+        \n9. Modifiche
+        \nCi riserviamo il diritto di adeguare la presente informativa sulla privacy in base a modifiche legali o tecniche dell'app.
+        \nPossiamo modificare l'app e i Termini e Condizioni (T&C) in qualsiasi momento.
+        \nLe modifiche saranno comunicate di conseguenza.
+        \n
+        \n11. Legge applicabile
+        \nSi applica la legge tedesca, salvo i diritti dei consumatori obbligatori del paese dell'utente.
+        \n
+        \n12. Consenso
+        \nAccettando i T&C, l'utente dichiara di averli letti e accettati.
+        \nL'uso non è possibile senza consenso.
+        `
+    };
+
+    function setLanguage(lang) {
+      // Text mit Zeilenumbrüchen
+      const textWithBreaks = translations[lang].replace(/\n/g, '<br>');
+      document.getElementById('text').innerHTML = textWithBreaks;
+
+      // Überschrift
+      document.querySelector('h1').innerText = lang === 'EN' ? 'Privacy Policy' :
+                                                lang === 'FR' ? 'Politique de confidentialité' :
+                                                lang === 'ES' ? 'Política de privacidad' :
+                                                lang === 'IT' ? 'Informativa sulla privacy' :
+                                                'Datenschutzerklärung';
+
+      // Aktive Buttons
+      document.querySelectorAll('#sidebar button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      const activeBtn = document.getElementById('btn-' + lang);
+      if(activeBtn) activeBtn.classList.add('active');
+    }
+
+    // Direkt beim Laden auf Englisch setzen
+    window.onload = () => {
+      setLanguage('EN');
+    };
+  </script>
+</body>
+</html>
